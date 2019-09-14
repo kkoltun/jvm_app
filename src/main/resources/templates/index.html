@@ -1,0 +1,109 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>JVM sandbox</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css" th:href="style.css">
+</head>
+<body>
+
+<form id="hidden-upload" action="/analyze" method="post" enctype="multipart/form-data">
+    <input type="file" id="real-input" name="file">
+    <button id="upload-button">Send</button>
+</form>
+
+<div id="container">
+    <h1>Memory packer</h1>
+    <div id="generate-container">
+        <div id="generate-input-container">
+            <form action="/generate">
+                <input id="generate-input" type="number" name="size" value="0" min="0"/>
+                <input id="real-generate-input" class="hidden" type="submit"/>
+            </form>
+        </div>
+        <button id="generate-button" class="button option-button generate-item">Generate</button>
+    </div>
+
+    <div class="item-container">
+        <button class="button option-button" onClick="location.href='/list'">List all</button>
+        <button class="button option-button" onClick="location.href='/delete_all'">Delete all</button>
+        <button class="button option-button" onClick="location.href='/size'">Size</button>
+    </div>
+
+    <h1>Text file analyzer</h1>
+    <div class="item-container">
+        <button id="browse-button" class="button">
+            Choose file for analysis
+        </button>
+    </div>
+
+    <h1>JVM options</h1>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Function</th>
+                <th>JVM argument</th>
+            </tr>
+            <tr>
+                <td>Uruchomienie z wyłączoną kompilacją</td>
+                <td>-Xint</td>
+            </tr>
+            <tr>
+                <td>Logi z kompilacji JIT</td>
+                <td>-XX:+PrintCompilation</td>
+            </tr>
+            <tr>
+                <td>Logi z Garbage Collectora</td>
+                <td>-XX:+PrintGC</td>
+            </tr>
+            <tr>
+                <td>Logi rozszerzone z Garbage Collectora</td>
+                <td>-XX:+PrintGCDetails</td>
+            </tr>
+            <tr>
+                <td>Użycie Parallel GC</td>
+                <td>-XX:+UseParallelGC</td>
+            </tr>
+            <tr>
+                <td>Użycie G1 GC</td>
+                <td>-XX:+UseG1GC</td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+
+<script>
+    let realInput = document.getElementById('real-input');
+    let generateInput = document.getElementById('real-generate-input');
+    let browseButton = document.getElementById("browse-button");
+    let uploadButton = document.getElementById("upload-button");
+    let generateButton = document.getElementById("generate-button");
+
+    function browseFiles() {
+        realInput.click();
+    }
+
+    function uploadFile() {
+        uploadButton.click();
+    }
+
+    function generateData() {
+        generateInput.click();
+    }
+
+    function addListener() {
+        browseButton.addEventListener("click", browseFiles);
+        realInput.addEventListener("change", uploadFile);
+        generateButton.addEventListener("click", generateData);
+    }
+
+    function getFilename(path) {
+        return path.replace(/^.*[\\\/]/, '');
+    }
+
+    addListener();
+</script>
+
+</body>
+</html>

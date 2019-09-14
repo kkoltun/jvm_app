@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-family: arial, sans-serif;
+}
+
+#hidden-upload {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+#generate-input {
+  width: 100%;
+
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+#generate-input-container {
+  width: 66%;
+}
+
+.button {
+  background-color: #335B87;
+  color: #f2f2f2;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: #763626;
+}
+
+#container {
+  padding: 0;
+  width: 98%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-container {
+  margin-bottom: 5%;
+  width: 98%;
+  height: 70px;
+
+  overflow: hidden;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.table-container {
+  margin-bottom: 5%;
+  width: 98%;
+}
+
+
+#generate-container {
+  padding: 0;
+  width: 98%;
+  height: 70px;
+
+  overflow: hidden;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.generate-item {
+  width: 45%;
+}
+
+.outer-item {
+  overflow: hidden;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-evenly;
+
+  width: 100%;
+  height: 200px;
+}
+
+.option-button {
+  width: 32%;
+  height: 80%;
+
+  border: none;
+  cursor: pointer;
+
+  border-radius: 5px;
+}
+
+#browse-button {
+  width: 100%;
+  height: 80%;
+
+  border: none;
+  cursor: pointer;
+
+  border-radius: 5px;
+}
+
+.buttons {
+  width: 40%;
+
+  display: flex;
+  flex-flow: row wrap;
+  height: 90%;
+}
+
+.buttons a {
+  text-decoration: none;
+  width: 100%;
+  height: 45%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#additional-info {
+  line-height: 1.5;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 75%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #aac0e3;
+}
