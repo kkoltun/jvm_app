@@ -5,6 +5,11 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+/**
+ * Data repository created only for training purposes.
+ * This implementation purposefully causes memory leak.
+ * This should not be implemented this way in real application.
+ */
 public class DataRepository {
 
     private List<DataModel> dataModelList = new ArrayList<>();
